@@ -1,3 +1,6 @@
+/**
+ * @author  AJ
+ */
 public class RealSubject implements Subject {
     @Override
     public void rent() {

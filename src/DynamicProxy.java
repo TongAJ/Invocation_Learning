@@ -1,6 +1,9 @@
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
+/**
+ * @author AJ
+ */
 public class DynamicProxy implements InvocationHandler {
     private Subject subject;
 
@@ -9,10 +12,10 @@ public class DynamicProxy implements InvocationHandler {
     }
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("before rent");
-        System.out.println("method: "+method);
+        System.out.println("before " + method.getName());
+        System.out.println("method: " + method);
         method.invoke(subject,args);
-        System.out.println("after rent");
+        System.out.println("after " + method.getName());
         return null;
 
     }
